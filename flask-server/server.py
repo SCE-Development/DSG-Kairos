@@ -6,5 +6,9 @@ app = Flask(__name__)
 def clients():
     return {"clients": ["Bob Jones", "Bobby123"]}
 
+
+def exampleMethod():
+    return {"blah blah "}
+
 if __name__ == "__main__":
     app.run(debug=True)
