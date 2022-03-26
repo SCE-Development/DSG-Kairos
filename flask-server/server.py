@@ -1,4 +1,6 @@
 from flask import Flask
+from insightly.insightly import Insightly
+import os
 
 app = Flask(__name__)
 
@@ -8,7 +10,10 @@ def clients():
 
 
 def exampleMethod():
-    return {"blah blah "}
+    i = Insightly(apikey=os.environ("INSIGHTLY_API_KEY"))
+    first_500_contacts = i.read('contacts')
+    return first_500_contacts
+
 
 if __name__ == "__main__":
     app.run(debug=True)

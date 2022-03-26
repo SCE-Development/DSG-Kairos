@@ -1,0 +1,7 @@
+*.pyc
+*~
+.idea
+2.2.txt
+apikey.txt
+testresults.txt
+insightly_data
