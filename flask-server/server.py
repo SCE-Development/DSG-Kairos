@@ -6,13 +6,13 @@ app = Flask(__name__)
 
 @app.route("/clients")
 def clients():
-    return {"clients": ["Bob Jones", "Bobby123"]}
+    return {"clientele": ["Bob Jones", "Bobby123"]}
 
-
+@app.route("/exampleMethod")
 def exampleMethod():
-    i = Insightly(apikey=os.environ("INSIGHTLY_API_KEY"))
+    i = Insightly(apikey=os.environ["INSIGHTLY_APIKEY"])
     first_500_contacts = i.read('contacts')
-    return first_500_contacts
+    return str(first_500_contacts)
 
 
 if __name__ == "__main__":
