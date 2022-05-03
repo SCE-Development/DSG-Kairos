@@ -17,7 +17,7 @@ import {
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route exact path="/" element={<Programs />} />
         <Route exact path="overview" element={<Overview />} />
