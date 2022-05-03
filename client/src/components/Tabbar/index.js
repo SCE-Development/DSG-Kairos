@@ -24,10 +24,10 @@ function Tabbar(props) {
                         <button class="btn" id="age-groups" onClick={onClick}>Age groups</button>
                     </li>
                     <li class="nav-overview">
-                        <button class="btn" id="another-metric" onClick={onClick}>Another metric</button>
+                        <button class="btn" id="another-metric" onClick={onClick}>Popular Categories</button>
                     </li>
                     <li class="nav-overview">
-                        <button class="btn" id="one-more" onClick={onClick}>One more metric for fun</button>
+                        <button class="btn" id="one-more" onClick={onClick}>Client Drop-Off</button>
                     </li>
                 </ul>
             </nav>
