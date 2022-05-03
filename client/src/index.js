@@ -20,7 +20,6 @@ ReactDOM.render(
     <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route exact path="/" element={<Programs />} />
-        <Route exact path="/DSG-Kairos" element={<p>bruh</p>} />
         <Route exact path="overview" element={<Overview />} />
         <Route exact path="workshop" element={<Workshop />} />
         <Route exact path="rental-assistance" element={<RentalAssistance />} />

@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/DSG-Kairos/static/css/main.f9688d16.css",
-    "main.js": "/DSG-Kairos/static/js/main.33ba4f4b.js",
+    "main.js": "/DSG-Kairos/static/js/main.eac68177.js",
     "static/js/787.c4e7f8f9.chunk.js": "/DSG-Kairos/static/js/787.c4e7f8f9.chunk.js",
     "static/media/logo.png": "/DSG-Kairos/static/media/logo.b4678b14c117d67d780e.png",
     "index.html": "/DSG-Kairos/index.html",
     "main.f9688d16.css.map": "/DSG-Kairos/static/css/main.f9688d16.css.map",
-    "main.33ba4f4b.js.map": "/DSG-Kairos/static/js/main.33ba4f4b.js.map",
+    "main.eac68177.js.map": "/DSG-Kairos/static/js/main.eac68177.js.map",
     "787.c4e7f8f9.chunk.js.map": "/DSG-Kairos/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f9688d16.css",
-    "static/js/main.33ba4f4b.js"
+    "static/js/main.eac68177.js"
   ]
 }
