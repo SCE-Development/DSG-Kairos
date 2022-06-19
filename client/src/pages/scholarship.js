@@ -1,9 +1,10 @@
 import DataVis from '../components/DataVis'
 
-export default function Scholarship() {
+export default function Scholarship(props) {
+    const { chartTypes } = props
     return (
         <div>
-            <DataVis program="Scholarship" />
+            <DataVis program="Scholarship" chartTypes={chartTypes} />
         </div>
     );
 }

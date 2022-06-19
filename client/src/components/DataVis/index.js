@@ -7,10 +7,11 @@ import Graph from "../Graph"
 import Table from "../Table"
 
 const DataVis = (props) => {
-    const { program } = props
+    const { program, chartTypes } = props
 
     return (
         <div>
+            {console.log(chartTypes)}
             <div>
                 <Navbar />
             </div>

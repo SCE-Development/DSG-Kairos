@@ -33,8 +33,6 @@ function LineChart(props) {
         const yAxis = d3.axisLeft(yScale)
             .ticks(5)
         
-        console.log(d3.timeFormat())
-        
         svg.append('g')
             .call(xAxis)
             .attr('transform', `translate(0, ${h})`)
