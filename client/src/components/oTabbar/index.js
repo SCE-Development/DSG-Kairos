@@ -1,7 +1,7 @@
 import "./styles.css"
 import React, { useState } from 'react';
 
-function Tabbar() {
+function OTabbar() {
 
     const onClick = (e) => {
         document.querySelectorAll('button').forEach(btn => {
@@ -15,7 +15,7 @@ function Tabbar() {
             <nav id="doc-nav" class="doc-nav" role="navigation">
                 <ul class="side">
                     <li class="nav-overview">
-                        <button class="btn active" id="client-frequency" onClick={onClick}>Client frequency at events</button>
+                        <button class="btn active" id="popular-categories" onClick={onClick}>Most popular categories</button>
                     </li>
                     <li class="nav-overview">
                         <button class="btn" id="active-users" onClick={onClick}>Most active users</button>
@@ -23,10 +23,13 @@ function Tabbar() {
                     <li class="nav-overview">
                         <button class="btn" id="age-groups" onClick={onClick}>Age groups</button>
                     </li>
+                    <li class="nav-overview">
+                        <button class="btn" id="consistent-client" onClick={onClick}>Consistent client dropping off</button>
+                    </li>
                 </ul>
             </nav>
         </div >
     )
 }
 
-export default Tabbar
+export default OTabbar

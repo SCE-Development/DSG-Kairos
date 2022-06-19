@@ -2,6 +2,7 @@ import React from "react"
 import "./styles.css"
 import Navbar from "../Navbar"
 import Tabbar from "../Tabbar"
+import OTabbar from "../OTabbar"
 import Graph from "../Graph"
 import Table from "../Table"
 
@@ -17,7 +18,8 @@ const DataVis = (props) => {
                 <div class="row">
                     {/* Side navigation */}
                     <div class="column large-3 doc-nav-container">
-                        <Tabbar />
+                        {program === "Overview" && <OTabbar />}
+                        {program !== "Overview" && <Tabbar />}
                     </div>
                     {/* Main content */}
                     <div class="large-9 hig-content">
@@ -34,20 +36,5 @@ const DataVis = (props) => {
         </div>
     )
 }
-
-/*
-<div class="tabby">
-                    <Tabbar program={program} />
-                </div>
-                <div class="line">
-                    <hr />
-                </div>
-                <div class="graph">
-                    <Graph />
-                </div>
-                <div class="table">
-                    <Table />
-                </div>
-*/
 
 export default DataVis;

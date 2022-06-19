@@ -1,0 +1,73 @@
+.column {
+    padding: 1.5em 2.5em;
+    flex-basis: 23%;
+    max-width: 23%;
+    width: 23%;
+}
+
+.column {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0px;
+    position: relative;
+}
+
+.hig-content {
+    padding-top: 0;
+    padding-bottom: 150px;
+    width: 400px;
+}
+
+.large-9 {
+    flex-basis: 75%;
+    max-width: 75%;
+    width: 75%;
+}
+
+.doc-nav {
+    width: 180px;
+}
+
+nav {
+    display: block;
+}
+
+.doc-nav .side {
+    margin-bottom: 1em;
+    margin-left: -10px;
+    margin-top: -0.25em;
+}
+
+nav ul,
+nav ol {
+    margin: 0;
+    list-style: none;
+}
+
+.doc-nav {
+    border-right: 1px solid darkgray;
+}
+
+button {
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    margin-left: -5em;
+    border-radius: 4px;
+    cursor: pointer !important;
+    color: #595959;
+    font-size: 14px;
+    border: none;
+    background: none;
+    width: 210px;
+    text-align: left;
+}
+
+.active {
+    color: white;
+    background-color: rgb(50, 173, 230) !important;
+}
+
+.nav-overview {
+    padding-bottom: 5px;
+}
