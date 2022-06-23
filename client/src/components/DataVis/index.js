@@ -5,9 +5,33 @@ import Tabbar from "../Tabbar"
 import OTabbar from "../OTabbar"
 import Graph from "../Graph"
 import Table from "../Table"
+import { useEffect, useState } from "react"
 
 const DataVis = (props) => {
-    const { program, chartTypes } = props
+    const { program } = props
+    const [mostPopularCategories, setMostPopularCategories] = useState();
+    const [ageGroups, setAgeGroups] = useState();
+    const [inactiveClients, setInactiveClients] = useState();
+
+    useEffect(() => {
+        // fetch('/get-active-clients').then(data => {
+        //     setMostPopularCategories(data);
+        // })
+        fetch('/ageGroups').then(data => {
+            setAgeGroups(data);
+        })
+        // fetch('/get-inactive-clients').then(data => {
+        //     setInactiveClients(data);
+        // })
+    }, [])
+
+
+    const chartTypes = {
+        "most-popular-categories": ("bar", "data"),
+        "client-frequency": ("bar", "data"),
+        "most-active-users": ("bar", "data"),
+        "consistent-client-dropping-off": ("bar", "data") // table?
+    }
 
     return (
         <div>
