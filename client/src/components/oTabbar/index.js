@@ -4,12 +4,13 @@ import React, { useEffect, useState } from 'react';
 function OTabbar({childToParent}) {
     const [ageGroups, setAgeGroups] = useState();
     const [mostActiveUsers, setmostActiveUsers] = useState();
+    const [inactiveClients, setInactiveCliets] = useState();
 
     const chartTypes = {
         // "most-popular-categories": ("bar", "data"),
         "age-groups": ("bar", ageGroups),
         "most-active-users": ("bar", mostActiveUsers),
-        "consistent-client-dropping-off": ("bar", "data") // table?
+        "consistent-client-dropping-off": ("bar", inactiveClients) // table?
     }
 
     useEffect(() => {
@@ -33,6 +34,14 @@ function OTabbar({childToParent}) {
         })   
     }
 
+    const getInactiveClients = () => {
+        fetch('/get-inactive-clients')
+        .then(data => {
+            setInactiveCliets(data);
+            console.log(data);
+        }) 
+    }
+
     const onClick = (e) => {
         document.querySelectorAll('button').forEach(btn => {
             btn.classList.remove('active');
@@ -41,8 +50,11 @@ function OTabbar({childToParent}) {
         if (e.target.id === "age-groups") {
             getAgeGroups();
         }
-        if (e.target.id === "active-users") {
+        else if (e.target.id === "active-users") {
             getActiveClients();
+        }
+        else if (e.target.id === "consistent-client") {
+            getInactiveClients();
         }
         childToParent(chartTypes);
     }
