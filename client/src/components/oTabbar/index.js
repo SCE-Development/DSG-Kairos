@@ -1,7 +1,7 @@
 import "./styles.css"
 import React, { useEffect, useState } from 'react';
 
-function OTabbar() {
+function OTabbar({childToParent}) {
     const [ageGroups, setAgeGroups] = useState();
     const [mostActiveUsers, setmostActiveUsers] = useState();
 
@@ -14,6 +14,7 @@ function OTabbar() {
 
     useEffect(() => {
         getAgeGroups();
+        childToParent(chartTypes);
     }, [])
 
     const getAgeGroups = () => {
@@ -43,6 +44,7 @@ function OTabbar() {
         if (e.target.id === "active-users") {
             getActiveClients();
         }
+        childToParent(chartTypes);
     }
 
     return (

@@ -10,11 +10,10 @@ import { useEffect, useState } from "react"
 const DataVis = (props) => {
     const { program } = props;
 
-    const chartTypes = {
-        "most-popular-categories": ("bar", "data"),
-        "client-frequency": ("bar", "data"),
-        "most-active-users": ("bar", "data"),
-        "consistent-client-dropping-off": ("bar", "data") // table?
+    const [chartTypes, setChartTypes] = useState();
+
+    const childToParent = (childData) => {
+        setChartTypes(childData);
     }
 
     return (
@@ -26,8 +25,8 @@ const DataVis = (props) => {
                 <div class="row">
                     {/* Side navigation */}
                     <div class="column large-3 doc-nav-container">
-                        {program === "Overview" && <OTabbar />}
-                        {program !== "Overview" && <Tabbar />}
+                        {program === "Overview" && <OTabbar childToParent={childToParent}/>}
+                        {program !== "Overview" && <Tabbar childToParent={childToParent}/>}
                     </div>
                     {/* Main content */}
                     <div class="large-9 hig-content">
@@ -41,6 +40,7 @@ const DataVis = (props) => {
                     </div>
                 </div>
             </div>
+            {/* {console.log(chartTypes)} */}
         </div>
     )
 }

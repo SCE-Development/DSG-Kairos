@@ -1,13 +1,19 @@
 import "./styles.css"
 import React, { useState, useEffect } from 'react';
 
-function Tabbar() {
+function Tabbar({childToParent}) {
     const [ageGroups, setAgeGroups] = useState();
     const [mostActiveUsers, setmostActiveUsers] = useState();
     // const [clientFrequency, setClientFrequency] = useState();
 
+    const chartTypes = {
+        "age-groups": ("bar", ageGroups),
+        "most-active-users": ("bar", mostActiveUsers) // table?
+    }
+
     useEffect(() => {
         getAgeGroups();
+        childToParent(chartTypes);
     }, [])
 
     const getAgeGroups = () => {
@@ -19,7 +25,7 @@ function Tabbar() {
     }
 
     const getActiveClients = () => {
-        fetch('/get-active-clients').then(results => results.json())
+        fetch('/get-active-clients').then(results => console.log(results.json()))
         .then(data => {
             setmostActiveUsers(data);
             console.log(data);
@@ -42,9 +48,10 @@ function Tabbar() {
         if (e.target.id === "age-groups") {
             getAgeGroups();
         }
-        if (e.target.id === "active-users") {
+        else if (e.target.id === "active-users") {
             getActiveClients();
         }
+        childToParent(chartTypes);
     }
 
     return (
