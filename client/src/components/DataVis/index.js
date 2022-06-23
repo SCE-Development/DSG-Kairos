@@ -6,6 +6,7 @@ import OTabbar from "../OTabbar"
 import Graph from "../Graph"
 import Table from "../Table"
 import { useEffect, useState } from "react"
+import { resolvePath } from "react-router-dom"
 
 const DataVis = (props) => {
     const { program } = props
@@ -17,8 +18,10 @@ const DataVis = (props) => {
         // fetch('/get-active-clients').then(data => {
         //     setMostPopularCategories(data);
         // })
-        fetch('/ageGroups').then(data => {
+        fetch('/ageGroups').then(results => results.json())
+        .then(data => {
             setAgeGroups(data);
+            console.log(data);
         })
         // fetch('/get-inactive-clients').then(data => {
         //     setInactiveClients(data);
